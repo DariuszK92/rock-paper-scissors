@@ -11,16 +11,9 @@ let computerScore=0;
 //Assign rock/paper/scissors value as computerChoice
 
 function getComputerChoice(){
-    const computerChoice = Math.floor(Math.random()*3);
- if(computerChoice===0){
-        return "rock"
-    }
-    else if(computerChoice===1){
-        return "paper"
-    }
-    else{
-        return "scissors"
-    }
+    const possibleChoices = ["rock", "paper", "scissors"]
+    let computerChoice = possibleChoices[Math.floor(Math.random()*possibleChoices.length)];
+    return computerChoice 
 }
 
     
@@ -108,4 +101,5 @@ function game2(){
 
 
 }
+
 
