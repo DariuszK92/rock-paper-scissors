@@ -1,6 +1,9 @@
-
+//Declaration of initial values of points for playeer and computer
 let userScore=0;
 let computerScore=0;
+
+
+//Function, that randomly assign rock/paper/scissors value as a computer choice
 
 function getComputerChoice(){
     const computerChoice = Math.floor(Math.random()*3);
@@ -15,10 +18,8 @@ function getComputerChoice(){
     }
 }
 
-
-
     
-
+//Function with the whole script of one round
 
 function playRound(){
 
@@ -59,6 +60,8 @@ function playRound(){
 
 
 
+//This function allows user to play first type of game
+//(playing five rounds, result can be also a draw)
 function game()
 {
     for (let i = 0; i < 5; i++) {
@@ -74,5 +77,29 @@ function game()
         }
      }
  
+}
+
+//This function allows user to play game
+//(playing until 5 point limit reached, no draws allowed)
+
+function game2(){
+    while(userScore<5 && computerScore<5)
+    {
+        playRound();
+    }
+
+    if(userScore==5){
+        alert(`You beat the computer! 
+        Result is ${userScore} - ${computerScore}`);
+    }
+    else if(computerScore==5){
+        alert(`You lose! 
+        Result is ${userScore} - ${computerScore}`);
+    }
+  //reset scores to allow user playing next game
+    userScore=0;
+    computerScore=0;
+
+
 }
 
