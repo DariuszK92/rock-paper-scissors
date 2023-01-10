@@ -1,9 +1,14 @@
+//Rock Paper Scissors game made in Pokemon world. Two scenarios for game tested with
+// For and While loops. 
+//Written by Dariusz Kozlowski
+
+
 //Declaration of initial values of points for playeer and computer
 let userScore=0;
 let computerScore=0;
 
 
-//Function, that randomly assign rock/paper/scissors value as a computer choice
+//Assign rock/paper/scissors value as computerChoice
 
 function getComputerChoice(){
     const computerChoice = Math.floor(Math.random()*3);
@@ -19,7 +24,7 @@ function getComputerChoice(){
 }
 
     
-//Function with the whole script of one round
+//One Round scripting
 
 function playRound(){
 
@@ -83,7 +88,8 @@ function game()
 //(playing until 5 point limit reached, no draws allowed)
 
 function game2(){
-    while(userScore<5 && computerScore<5)
+    while(userScore<5 
+        && computerScore<5)
     {
         playRound();
     }
