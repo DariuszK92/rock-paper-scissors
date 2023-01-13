@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+body{
+  margin:0;
+}
+*
+{
+  font-family: 'VT323';
+}
+button{
+  font-size:40px;
+  font-weight:700;
+ background-color: transparent;
+  border:none;
+}
+
+button:hover{
+  color:beige;
+}
+#navigation-big {
+ height:80px;
+ background-color:  #d90000;
+ width:100%;
+  margin:0;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+#right-side:last-child{
+  margin-right:10px;
+}
+#logo{
+  height:70px;
+  display:flex;
+  align-items:center;
+  margin-left:10px;
+}
+#logo:hover{
+   animation: shake 0.7s;
+}
+#pokeball{
+  height:60px;
+}
+
+#background{
+  z-index:-1;
+  position:fixed;
+  top:0;
+  width:100vw;
+}
+
+#background-img{
+  width:100vw;
+  height: 100vh;
+  
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#footer{
+  height:40px;
+ background-color:  #d90000;
+  font-size: 22px;
+ width:100%;
+  margin:0;
+  position:fixed;
+  bottom:0; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#github{
+  height:20px;
+  margin-left:10px;
+
+}
+#github:hover{
+   opacity: 0.40;
+ }
+
+ /* Gameplay styling*/
+ #game{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 20px;
+    
+ }
+
+ #score{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    gap:10px;
+ }
+ .scorecard {
+    height:70px;
+    width:70px;
+    font-size: 45px;
+    background-color: white;
+    border: black 1px solid;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10%;
+ }
+
+ #playground{
+    position: fixed;
+    top: 180px;
+    width: 100%;
+    z-index: 22;
+    background-color: white;
+    height:calc(100vh - 400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+ }
+
+ #cards{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+ }
+ #player-cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+ }
+ #computer-cards{
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+ }
+
+ .card{
+    height:220px;
+    width: 130px;
+    border: solid 2px black;
+    border-radius: 15px;
+    background-color: #d90000;
+    
+ }

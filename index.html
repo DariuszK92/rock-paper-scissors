@@ -7,12 +7,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Dariusz Kozlowski">
         <meta name="description" content="Rock Paper Scissors game">
+        <link rel="stylesheet" href="style.css">
         
     </head>
     <body>
-        <button onclick="game()">Start game</button>
-        <button onclick="game2()">Start game 2</button>
-    
+      
+        <div id="background"><img id="background-img" src="https://i.pinimg.com/originals/6f/0f/5f/6f0f5fc4ea58173c66424c599ca05247.jpg">
+        </div>
+        <!-- Styling of navigation desktop-->     
+        <div id="navigation-big">
+            <div id="logo">
+                <img id="pokeball" src="https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png">
+            </div>
+            <div id="right-side">
+                <button onclick="game2()">PLAY</button>
+                <button>RULES</button>
+                <button>SOURCES</button>
+            </div>      
+        </div>
+        
+        <div id="game">
+            <div id="score">
+                <div class="scorecard"><p id="userScore">0</p></div>
+                <div class="scorecard"><p id="computerScore">0</p></div>
+            </div>
+            <div id="playground">
+                <div id="cards">
+                    <div id="player-cards">
+                        <div class="card">123</div>
+                        <div class="card">123</div>
+                        <div class="card">123</div>
+                    </div>
+                    <div id="computer-cards">
+                        <div class="card">123</div>
+                    </div>
+                </div> 
+                <div><button id="#btn">Start game!</button></div>   
+            </div>
+        </div>        
+            
+            
+            
+        <div id="footer">
+            <footer>Copyright © 2023 Dariusz Kozlowski </footer>
+            <a href="https://github.com/DariuszK92" target="_blank">
+                <img id="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+            </a>
+        </div>
+            
 
     </body>
 

@@ -31,7 +31,8 @@ function playRound(){
     alert(`Draw! Both of you choose ${playerSelection} as a weapon!`);
     userScore=userScore;
     computerScore=computerScore;
-    console.log(`Your score is ${userScore} and you oponent ${computerScore}`);
+    document.getElementById("userScore").textContent= userScore;
+    document.getElementById("computerScore").textContent= computerScore;
     
    }
    else if((playerSelection=="rock" && computerChoice=="scissors") || 
@@ -40,6 +41,8 @@ function playRound(){
     alert(`You win, ${playerSelection} beats ${computerChoice}!`);
     userScore=++userScore;
     console.log(`Your score is ${userScore} and you oponent ${computerScore}`);
+    document.getElementById("userScore").textContent= userScore;
+    document.getElementById("computerScore").textContent= computerScore;
    }
    else if((playerSelection=="scissors" && computerChoice=="rock"||
    (playerSelection=="rock" && computerChoice == "paper") ||
@@ -48,11 +51,15 @@ function playRound(){
     alert(`You lose, ${computerChoice} beats ${playerSelection}!`);
     computerScore=++computerScore;
     console.log(`Your score is ${userScore} and you oponent ${computerScore}`);
+    document.getElementById("userScore").textContent= userScore;
+    document.getElementById("computerScore").textContent= computerScore;
    }
    else {
     alert(`You lose, what is ${playerSelection}?`)
     computerScore=++computerScore;
     console.log(`Your score is ${userScore} and you oponent ${computerScore}`);
+    document.getElementById("userScore").textContent= userScore;
+    document.getElementById("computerScore").textContent= computerScore;
    }  
 }
 
@@ -62,6 +69,7 @@ function playRound(){
 //(playing five rounds, result can be also a draw)
 function game()
 {
+   
     for (let i = 0; i < 5; i++) {
         playRound();
         if(i==4 && userScore>computerScore){
@@ -77,10 +85,15 @@ function game()
  
 }
 
+
+
 //This function allows user to play game
 //(playing until 5 point limit reached, no draws allowed)
 
 function game2(){
+
+    document.getElementById('btn').style.visibility='hidden';
+
     while(userScore<5 
         && computerScore<5)
     {
