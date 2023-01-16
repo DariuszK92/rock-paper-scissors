@@ -2,6 +2,9 @@
 body{
   margin:0;
 }
+
+html { overflow-y: scroll; overflow-x:hidden; }
+
 *
 {
   font-family: 'VT323';
@@ -15,6 +18,7 @@ button{
 
 button:hover{
   color:beige;
+  cursor:pointer;
 }
 #navigation-big {
  height:80px;
@@ -22,6 +26,7 @@ button:hover{
  width:100%;
   margin:0;
   display:flex;
+  z-index:999;
   justify-content: space-between;
   align-items:center;
 }
@@ -36,9 +41,11 @@ button:hover{
 }
 #logo:hover{
    animation: shake 0.7s;
+  cursor:pointer;
 }
 #pokeball{
   height:60px;
+  opacity: 1;
 }
 
 #background{
@@ -51,6 +58,7 @@ button:hover{
 #background-img{
   width:100vw;
   height: 100vh;
+
   
 }
 
@@ -75,11 +83,14 @@ button:hover{
  width:100%;
   margin:0;
   position:fixed;
+  z-index: 2;
   bottom:0; 
   display:flex;
   justify-content:center;
   align-items:center;
 }
+
+
 
 #github{
   height:20px;
@@ -132,29 +143,177 @@ button:hover{
     gap: 20px;
  }
 
- #cards{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
- }
- #player-cards{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
- }
- #computer-cards{
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
- }
+ 
 
- .card{
-    height:220px;
-    width: 130px;
-    border: solid 2px black;
-    border-radius: 15px;
-    background-color: #d90000;
-    
- }
+#newGame {
+   box-sizing:border-box;
+  position: fixed;
+  text-align:center;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  background-color:orange;
+  z-index: +99;
+  width: 300px;
+  height:200px; 
+  border-radius: 15px;
+   
+  }
+
+/* The Modal (background) */
+.modal {
+  box-sizing:border-box;
+  display: none; /*hidden by default*/
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  border:4px black solid;
+}
+
+/* Modal Content */
+.modal-content {
+  display:flex;
+  box-sizing:border-box;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  margin: auto;
+  width: 100%;
+  height:100%;
+}
+
+/* The Close Button */
+.close {
+   box-sizing:border-box;
+      color: black;
+    font-size: 36px;
+    font-weight: bold;
+    align-self: flex-end;
+  margin-right:15px;
+  
+}
+
+a:hover,
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+
+#startAgain:hover{
+   border:4px solid white;
+  background-color:black;
+}
+#startAgain{
+   box-sizing:border-box;
+  font-size:26px;
+  border:4px solid black;
+  border-radius:5px;
+  width:50%; 
+  padding:10px;
+  margin-bottom:10px;
+}
+
+#end-text{
+  font-size:32px
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 98;
+  cursor: pointer;
+}
+
+/*Styling for pages Rules and Sources*/ 
+#main-content{
+  position:fixed;
+  background-color:#d90000;
+  top: 150px;
+  left:15vw;
+  height:60vh;
+  
+  width: 70vw;
+  z-index:1;
+  border-radius: 5%;
+
+}
+a{
+  text-decoration: none;
+  color: initial;
+}
+h1{
+  text-align: center;
+  font-size:calc(2vw + 2vh + 2vmin);
+  padding-bottom: 3vh;
+}
+ol > li{
+  text-align: left;
+  margin-left: 7vw;
+  margin-right: 4vw;
+  padding-bottom: 1vh;
+  font-size:calc(1vw + 1.5vh + 2vmin);
+}
+.sources > li{
+ 
+  font-size:calc(1vw + 1vh + 1vmin);
+}
+
+/*Styling cards*/
+
+#cards{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+#player-cards{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+#player-cards .card:hover{
+cursor:pointer;
+}
+#computer-cards{
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.card{
+  height:220px;
+  width: 130px;
+  border: solid 2px black;
+  border-radius: 15px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.pokemon{
+  width:70%;
+}
+
+.card:active{
+  animation: shake 0.6s;
+}
