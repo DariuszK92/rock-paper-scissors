@@ -5,6 +5,8 @@ body{
 
 html { overflow-y: scroll; overflow-x:hidden; }
 
+
+
 *
 {
   font-family: 'VT323';
@@ -134,7 +136,7 @@ button:hover{
     top: 180px;
     width: 100%;
     z-index: 22;
-    background-color: white;
+  
     height:calc(100vh - 400px);
     display: flex;
     flex-direction: column;
@@ -264,14 +266,14 @@ h1{
 }
 ol > li{
   text-align: left;
-  margin-left: 7vw;
-  margin-right: 4vw;
+  margin-left: 2vw;
+  margin-right: auto;
   padding-bottom: 1vh;
   font-size:calc(1vw + 1.5vh + 2vmin);
 }
 .sources > li{
  
-  font-size:calc(1vw + 1vh + 1vmin);
+  font-size:calc(0.6vw + 0.6vh + 1vmin);
 }
 
 /*Styling cards*/
@@ -300,7 +302,7 @@ cursor:pointer;
 .card{
   height:220px;
   width: 130px;
-  border: solid 2px black;
+  border: solid 4px gray;
   border-radius: 15px;
   background-color: green;
   display: flex;
@@ -308,10 +310,21 @@ cursor:pointer;
   align-items: center;
   
 }
+#player-cards .card:nth-child(2){
+  background-color: red;
+}
+#player-cards .card:nth-child(3){
+  background-color: blue;
+}
 
-
+#computer-cards .card{
+  background-color: brown;
+}
 .pokemon{
   width:70%;
+}
+#player-cards .card:nth-child(3) .pokemon{
+  width: 100%;
 }
 
 .card:active{

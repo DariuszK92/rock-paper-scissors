@@ -20,7 +20,7 @@ let  overlay = document.getElementById("overlay");
 //Assign rock/paper/scissors value as computerChoice
 
 function getComputerChoice(){
-    const possibleChoices = ["rock", "paper", "scissors"]
+    const possibleChoices = ["bulbasaur", "charmander", "squirtle"]
     let computerChoice = possibleChoices[Math.floor(Math.random()*possibleChoices.length)];
     return computerChoice 
 }
@@ -44,9 +44,9 @@ function playRound(playerSelection){
       document.getElementById("computerScore").textContent= computerScore;    
      }
 
-     else if((playerSelection=="rock" && computerChoice=="scissors") || 
-     (playerSelection=="scissors" && computerChoice=="paper")|| 
-     playerSelection=="paper" && computerChoice=="rock"){
+     else if((playerSelection=="bulbasaur" && computerChoice=="squirtle") || 
+     (playerSelection=="squirtle" && computerChoice=="charmander")|| 
+     playerSelection=="charmander" && computerChoice=="bulbasaur"){
       alert(`You win, ${playerSelection} beats ${computerChoice}!`);
       userScore=++userScore;
       computerScore=computerScore;
@@ -54,9 +54,9 @@ function playRound(playerSelection){
       document.getElementById("computerScore").textContent= computerScore;
 
      }
-     else if((playerSelection=="scissors" && computerChoice=="rock"||
-     (playerSelection=="rock" && computerChoice == "paper") ||
-      (playerSelection =="paper" && computerChoice=="scissors") )
+     else if((playerSelection=="squirtle" && computerChoice=="bulbasaur"||
+     (playerSelection=="bulbasaur" && computerChoice == "charmander") ||
+      (playerSelection =="charmander" && computerChoice=="squirtle") )
          ) {
       alert(`You lose, ${computerChoice} beats ${playerSelection}!`);
       computerScore=++computerScore;
