@@ -7,6 +7,10 @@ let userScore=0;
 let computerScore=0;
 let playerSelection= "";
 
+// Second paragraph comes after 2 seconds after first
+setTimeout(() => {
+    document.getElementById("userPokemon").textContent=`Choose your pokemon!`;   
+  }, 3900)
 
 
 //Declaration of variables
@@ -30,45 +34,43 @@ function getComputerChoice(){
 
 function playRound(playerSelection){
   let computerChoice=getComputerChoice();
-  if(userScore ===5 || computerScore === 5){
+   if(userScore ===5 || computerScore === 5){
   modal.style.display = "block";
   overlay.style.display = "block";
   }
-
   else{
      if(playerSelection==computerChoice){
-      alert(`Draw! Both of you choose ${playerSelection} as a weapon!`);
-      userScore=userScore;
-      computerScore=computerScore;
-      document.getElementById("userScore").textContent= userScore;
-      document.getElementById("computerScore").textContent= computerScore;    
+        document.getElementById("userPokemon").textContent=`You choose ${playerSelection}`;
+      
+
+         document.getElementById("computerPokemon").textContent=`Your opponent chooses ${computerChoice}`;
+        document.getElementById("scoreline").textContent=`THE RESULT IS ${userScore} vs ${computerScore}`; 
      }
 
      else if((playerSelection=="bulbasaur" && computerChoice=="squirtle") || 
      (playerSelection=="squirtle" && computerChoice=="charmander")|| 
      playerSelection=="charmander" && computerChoice=="bulbasaur"){
-      alert(`You win, ${playerSelection} beats ${computerChoice}!`);
-      userScore=++userScore;
-      computerScore=computerScore;
-      document.getElementById("userScore").textContent= userScore;
-      document.getElementById("computerScore").textContent= computerScore;
+        document.getElementById("userPokemon").textContent=`You choose ${playerSelection}`
+         document.getElementById("computerPokemon").textContent=`Your opponent chooses ${computerChoice}`
+          userScore=++userScore;
+           document.getElementById("scoreline").textContent=`THE RESULT IS ${userScore} vs ${computerScore}`; 
 
      }
      else if((playerSelection=="squirtle" && computerChoice=="bulbasaur"||
      (playerSelection=="bulbasaur" && computerChoice == "charmander") ||
       (playerSelection =="charmander" && computerChoice=="squirtle") )
          ) {
-      alert(`You lose, ${computerChoice} beats ${playerSelection}!`);
+        document.getElementById("userPokemon").textContent=`You choose ${playerSelection}`
+         document.getElementById("computerPokemon").textContent=`Your opponent chooses ${computerChoice}`;
+     
       computerScore=++computerScore;
-      document.getElementById("userScore").textContent= userScore;
-      document.getElementById("computerScore").textContent= computerScore;
+              document.getElementById("scoreline").textContent=`THE RESULT IS ${userScore} vs ${computerScore}`;
 
      }
      else {
       alert(`You lose, what is ${playerSelection}?`)
       computerScore=++computerScore;
-      document.getElementById("userScore").textContent= userScore;
-      document.getElementById("computerScore").textContent= computerScore;
+        document.getElementById("scoreline").textContent=`THE RESULT IS ${userScore} vs ${computerScore}`;
 
      }  
      if(userScore ===5 || computerScore === 5){
@@ -81,11 +83,14 @@ function playRound(playerSelection){
 
 
 function restartGame(){
+  
     userScore=0;
     computerScore=0;
-    document.getElementById("userScore").textContent= userScore;
-    document.getElementById("computerScore").textContent= computerScore;
-    closeOverlay();
+    document.getElementById("scoreline").textContent=`THE RESULT IS ${userScore} vs ${computerScore}`;
+  closeOverlay();
+  document.getElementById("userPokemon").textContent=`Choose your pokemon!`
+         document.getElementById("computerPokemon").textContent=``;
+     
   
 }
 

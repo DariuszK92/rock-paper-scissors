@@ -11,7 +11,9 @@
         
     </head>
     <body>
-    
+    <script src="https://kit.fontawesome.com/b371bd7be1.js" crossorigin="anonymous"></script>
+</script>
+
   <!-- New GAme button styling-->      
       <div id="overlay" onclick="closeOverlay()"></div>
   <div id="newGame" class="modal">
@@ -27,7 +29,7 @@
 <!--Background photo -->
         <div id="background"><img id="background-img" src="https://i.pinimg.com/originals/6f/0f/5f/6f0f5fc4ea58173c66424c599ca05247.jpg">
         </div>
-        <!-- Styling of navigation desktop-->     
+        <!-- Styling of navigation for bigger screen resolution-->     
         <div id="navigation-big">
             <div id="logo">
                 <img id="pokeball" src="img/logo.png" alt="logo pokeball">
@@ -38,12 +40,19 @@
                 <button><a  href="sources.html">SOURCES</a></button>
             </div>      
         </div>
-        
-        <div id="game">
-            <div id="score">
-                <div class="scorecard"><p id="userScore">0</p></div>
-                <div class="scorecard"><p id="computerScore">0</p></div>
+         <!-- Styling of navigation for smaller screen resolution-->     
+        <div id="navigation-small">
+            <div id="logo">
+                <img id="pokeball" src="img/logo.png" alt="logo pokeball">
             </div>
+            <div id="right-side">
+                <button><a href="index.html"><i class="fa-regular fa-circle-play"></i></a></button>
+                <button><a href="rules.html"><i class="fa-regular fa-circle-question"></i></a></button>            </div>      
+        </div>
+      
+  <!-- End of navigation styling-->
+        <div id="game">
+             
             <div id="playground">
                 <div id="cards">
                     <div id="player-cards">
@@ -69,10 +78,10 @@
             
         </div>        
         <div id="chat">
-            <p class="conv">Welcome to pokemon arena! Choose your pokemon!</p>
-            <p class="conv">You choose bulbasaur!</p>
-            <p class="conv">Your opponent chooses squirtle!</p>
-            <p class="conv">Your won!!</p>
+            <p class="conv">Welcome to pokemon arena! </p>
+            <p id="userPokemon" class="conv2"></p>
+            <p id="computerPokemon" class="conv"></p>
+            <p id="scoreline"></p>
         </div>    
             
             
