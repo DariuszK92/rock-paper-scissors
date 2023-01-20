@@ -35,6 +35,11 @@ button:hover{
       justify-content: space-between;
       align-items:center;
     }
+#container{
+  top:80px;
+  height:calc(100vh - 120px);
+}
+    
     #navigation-small {
       display:none;
     }
@@ -48,7 +53,21 @@ button:hover{
   height:60px;
   opacity: 1;
 }
-    
+ 
+
+#playground{
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  z-index: 22;
+  height:calc(100vh - 300px);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
     /*Chat stylization*/
 #chat{
   box-sizing: border-box;
@@ -91,7 +110,12 @@ button:hover{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+}
+#scoreline{
+  margin:0;
+  font-size:32px;
+  text-align:center;
 }
 }
 
@@ -130,7 +154,7 @@ button:hover{
     position:fixed;
     z-index: 2;
     bottom:40px;
-    height:140px;
+    height:100px;
    background-color:white;
     font-size: 20px;
    width:100%;
@@ -142,6 +166,24 @@ button:hover{
       justify-content: space-around;
 
   }
+  #container{
+    position:fixed;
+    top:60px;
+    height:calc(100vh - 100px);
+  }
+ #playground{
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 22;
+  height:calc(100vh - 200px);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
     #cards{
   display: flex;
   flex-direction:column;
@@ -155,12 +197,14 @@ button:hover{
     .card{
   
   width: 25vw;
+  max-width: 110px;
   height: 25vw;
+  max-height: 110px;
   border: solid 4px gray;
   border-radius: 50%;
   background-color: green;
   display: flex;
- 
+  justify-content: center;
   align-items: center;
   
 }
@@ -171,10 +215,27 @@ button:hover{
   align-items: center;
   
 }
+#scoreline{
+  margin:0;
+  font-size:22px;
+  text-align:center;
+}
     
 }
 /*End of small screen sizing*/
+/*landscape orientation styling*/
+@media (orientation: landscape) {
+  #cards {
+    flex-direction: row;
+  }
+  #container{
+    position:fixed;
+    top:60px;
+    height:calc(100vh - 100px);
+  }
+}
 
+/*End of styling landscape orientation*/
 
 #right-side:last-child{
   margin-right:10px;
@@ -236,15 +297,15 @@ button:hover{
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin-left: 10px ; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .1em; /* Adjust as needed */
+  letter-spacing: .05em; /* Adjust as needed */
   animation: 
-    typing 3.5s steps(30, end),
+    typing 2.5s steps(30, end),
     blink-caret .5s;
 }
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 32% }
+  to { width: 30% }
 }
 
 /* The typewriter cursor effect */
@@ -292,19 +353,6 @@ button:hover{
 
 
 
- #playground{
-    position: fixed;
-    top: 80px;
-    width: 100%;
-    z-index: 22;
-    height:calc(100vh - 300px);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
- }
 
  
 
@@ -404,10 +452,19 @@ a:hover,
 }
 
 /*Styling for pages Rules and Sources*/ 
-#main-content{
+#container{
   position:fixed;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-content{
+  
   background-color:#d90000;
-  top: 150px;
+  top: 80px;
   left:15vw;
   height:60vh;
   
@@ -460,6 +517,7 @@ cursor:pointer;
 
 #computer-cards .card{
   background-color: brown;
+ 
 }
 .pokemon{
   width:70%;
@@ -472,8 +530,3 @@ cursor:pointer;
   animation: shake 0.6s;
 }
 
-#scoreline{
-  margin:0;
-  font-size:32px;
-  text-align:center;
-}
